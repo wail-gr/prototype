@@ -1,0 +1,117 @@
+:root{
+  --charcoal:#0f0f10;
+  --graphite:#232323;
+  --porcelain:#f5f5f5;
+  --sugi:#d4af37; /* sufi gold */
+  --sage:#a5c4a1;
+  --muted:#c98686;
+  --panel: rgba(255,255,255,0.03);
+  --bubble: rgba(255,255,255,0.04);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #0b0b0b 0%, #141414 100%);
+  color:var(--porcelain);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+/* container */
+.container{ width:100%; max-width:900px; }
+
+/* main card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border-radius:18px;
+  padding:28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* header */
+.card-header{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; gap:12px; }
+.title{ font-size:32px; margin:0; letter-spacing: -0.02em; color: #ead9b1; } /* soft gold-ish */
+.subtitle{ margin:6px 0 0 0; color: rgba(245,245,245,0.65); font-size:14px; }
+
+/* chat area */
+.chat-area{
+  height:420px;
+  background: var(--panel);
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:16px;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* messages */
+.message{
+  max-width:78%;
+  padding:14px 16px;
+  border-radius:12px;
+  line-height:1.35;
+  font-size:15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.45);
+  background:var(--bubble);
+}
+.assistant{
+  align-self:flex-start;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+  color:var(--porcelain);
+}
+.user{
+  align-self:flex-end;
+  background: rgba(165,196,161,0.09);
+  color: var(--porcelain);
+}
+
+/* composer */
+.composer{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.input{
+  flex:1;
+  padding:14px 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:12px;
+  color:var(--porcelain);
+  font-size:15px;
+  outline:none;
+}
+.input::placeholder{ color: rgba(245,245,245,0.35); }
+.send-btn{
+  border:0;
+  padding:12px 18px;
+  border-radius:10px;
+  background:var(--sugi);
+  color:#111;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.send-btn:active{ transform: translateY(1px); }
+.send-btn:focus{ outline:2px solid rgba(212,175,55,0.18); }
+
+/* footer */
+.card-footer{ text-align:center; margin-top:14px; font-size:13px; color:rgba(245,245,245,0.45); }
+
+/* responsive */
+@media (max-width:600px){
+  .title{ font-size:22px; }
+  .chat-area{ height:360px; }
+}

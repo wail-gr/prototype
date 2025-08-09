@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BetterWithin — Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <header class="card-header">
+        <div>
+          <h1 class="title">BetterWithin — Prototype</h1>
+          <p class="subtitle">AI companion for emotional resilience — MVP</p>
+        </div>
+      </header>
+
+      <section class="chat-area" aria-live="polite" id="chatArea">
+        <div class="message assistant" id="initialMessage">
+          Salaam — I'm here. What would you like to talk about?
+        </div>
+        <!-- messages append here -->
+      </section>
+
+      <form id="composer" class="composer" autocomplete="off">
+        <input id="inputBox" class="input" placeholder="Say something — I'm listening" />
+        <button type="submit" class="send-btn">Send</button>
+      </form>
+
+      <footer class="card-footer">
+        Built with care • Keep privacy local-first
+      </footer>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
